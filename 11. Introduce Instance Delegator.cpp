@@ -1,4 +1,12 @@
+//11. Introduce Instance Delegator
 
+//=====================================================================================================================
+// Problem Description
+/*
+Static Methods only cause problems if the contain dependencies, which are problematic to test.
+*/
+//=====================================================================================================================
+// Step by Step
 /*
 1. Identify Static Method, that is hard to test.
 2. Create an Instance Method (Delegator) in the corresponding class. Use "Preserve Signatures" and delegate inside of 
@@ -7,8 +15,10 @@
     Use "15. Parameterize Method" or another dependency revoking technique to provide Intances at the locations at 
     which the Static Method has been used.
 4. Replace the problematic call of the Static Method with the call of the Delegator of the Instance.
-
 */
+
+//=====================================================================================================================
+// Code Example
 // Class with only static methods.
 class BankingServices
 {
