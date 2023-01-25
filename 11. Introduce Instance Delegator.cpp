@@ -12,7 +12,7 @@
 // Class with only static methods.
 class BankingServices
 {
-    static void updateAccountBalance(int userID, Monney amount)
+    static void updateAccountBalance(int userID, Money amount)
     {
         // ...
     }
@@ -23,7 +23,7 @@ class BankingServices
 // Added method, which calls static study.
 class BankingServices
 {
-    static void updateAccountBalance(int userID, Monney amount)
+    static void updateAccountBalance(int userID, Money amount)
     {
         // ...
     }
