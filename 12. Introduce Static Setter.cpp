@@ -25,4 +25,48 @@ class RouterFactory
     {
         return new EWNRouter();
     }
+};
+
+// Changes to make it possible
+// Create Interface
+class RouterServer
+{
+    Router makeRouter();
+};
+
+// make Router a member, that can be set by setter.
+class RouterFactory
+{
+    RouterServer server;
+
+    static Router makeRouter()
+    {
+        return server.makeRouter()
+    }
+
+    static setServer(RouterServer server)
+    {
+        this->server = server;
+    }
+
+    static RouterServer server = new RouterServer()
+    {
+        public RouterServer makeROuter() 
+        {
+            return new EWNRouter;
+        }
+    };
+};
+
+// In a Test suite the following can be done
+void setUp()
+{
+    RouterServer.setServer(new Routerserver)
+    {
+        public RouterServer makeRouter()
+        {
+            return new FakeRouter();
+        }
+    }
 }
+
