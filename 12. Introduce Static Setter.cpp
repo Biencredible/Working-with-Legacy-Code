@@ -3,7 +3,7 @@
 //=====================================================================================================================
 // Problem Description
 /*
-Class that should tested, depends on global Singleton.
+Class that should be tested, depends on global Singleton.
 */
 //=====================================================================================================================
 // Step by Step
