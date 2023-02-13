@@ -18,7 +18,7 @@ Parameters of mehtod to test are hard to create.
 
 //=====================================================================================================================
 // Code Example
-// Class with a fnction with hard to create parameters
+// Class with a function with hard to create parameters
 class ARMDispatcher
 {
 public: 
