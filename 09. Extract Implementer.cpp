@@ -29,8 +29,8 @@ class ModelNode
 private:
     list<ModelNode*> m_interioNodes;
     list<ModelNode*> m_exteriorNodes;
-    double: m_weight;
-    void: createSpanningLinks();
+    double m_weight;
+    void createSpanningLinks();
 
 public:
     void addExteriorNode(ModelNode* newNode);
@@ -38,4 +38,50 @@ public:
     void colorize();
     // ...
 };
-// 
+// Copy class into another header wit another name
+// ProductionModelNode.h
+class ProductionModelNode
+{
+private:
+    list<ModelNode*> m_interioNodes;
+    list<ModelNode*> m_exteriorNodes;
+    double m_weight;
+    void createSpanningLinks();
+
+public:
+    void addExteriorNode(ModelNode* newNode);
+    void addInternalNode(ModelNode* newNode);
+    void colorize();
+    // ...
+};
+// Remove all public member and methods from the source class to make it an interface. Turn all non-public methods into 
+// abstract methods. Create an abstracr destructor.
+// ModelNode.h
+class ModelNode
+{
+public:
+    virtual ~ModelNode() = 0
+    virtual void addExteriorNode(ModelNode* newNode) = 0;
+    virtual void addInternalNode(ModelNode* newNode) = 0;
+    virtual void colorize() = 0;
+    // ...
+};
+// ModelNode.cpp
+ModelNode::~ModelNode() {}
+// Make new class a child class of interface
+// ProductionModelNode.h
+#include "ModelNode.h"
+class ProductionModelNode : public ModelNode
+{
+private:
+    list<ModelNode*> m_interioNodes;
+    list<ModelNode*> m_exteriorNodes;
+    double m_weight;
+    void createSpanningLinks();
+
+public:
+    void addExteriorNode(ModelNode* newNode);
+    void addInternalNode(ModelNode* newNode);
+    void colorize();
+    // ...
+};
